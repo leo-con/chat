@@ -1,0 +1,127 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Web chat schedules example</title>
+    <style type="text/css">
+        #chat-button {
+            display: none;
+        }
+        #chat-button.purecloud-chat-available {
+            display: inline;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Web chat schedules example</h1>
+    <form>
+
+        <button type="button" id="chat-button">Start Chat</button>
+
+    </form>
+    <div id="chat-container" style="height:600px"></div>
+
+        <script
+          id="purecloud-webchat-js"
+          type="text/javascript"
+          src="https://apps.mypurecloud.com/webchat/jsapi-v1.js"
+          region="us-east-1"
+          org-guid="469e5298-2ec4-4340-bdea-08ad8c2495b5"
+          deployment-key="7fe9bd9e-3b6b-47f7-919a-2bac796ed23c"
+        ></script>
+
+   <!-- <script src="https://apps.mypurecloud.com/webchat/jsapi-v1.js" type="text/javascript"></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function initializeChat () {
+            var chatConfig = {
+                // Web chat application URL
+                webchatAppUrl: 'https://apps.mypurecloud.com/webchat',
+
+                // Web chat service URL
+                webchatServiceUrl: 'https://realtime.mypurecloud.com:443',
+
+                // Numeric organization ID
+                orgGuid: '469e5298-2ec4-4340-bdea-08ad8c2495b5',
+                orgId: 1041,
+
+                // Organization name. Replace with your org name.
+                orgName: 'ininadoptioninternal',
+                queueName : 'Leonel',
+                // Target agent email (OPTIONAL)
+                agentEmail: 'alex.agent@example.com',
+
+                // Log level
+                logLevel: 'DEBUG',
+
+                // Locale code
+                locale: 'en',
+
+                 data: {
+                        'firstName': 'Leo',
+                        'lastName': '',
+                        'addressStreet': '',
+                        'addressCity': '',
+                        'addressPostalCode': '',
+                        'addressState': '',
+                        'phoneNumber': '',
+                        'customField1Label': '',
+                        'customField1': '',
+                        'customField2Label': '',
+                        'customField2': '',
+                        'customField3Label': '',
+                        'customField3': '',
+                        'email': ''
+                      },
+
+                // Logo used within the chat window
+                companyLogoSmall: {
+                    width: 149,
+                    height: 149,
+                    url: 'https://dhqbrvplips7x.cloudfront.net/webchat/1.0.23/company-logo-small-9c9fe09b.png'
+                },
+
+                // Text displayed with chat window is displayed
+                welcomeMessage: 'Thanks for chatting.',
+
+                // CSS class applied to the chat window
+                cssClass: 'webchat-frame',
+
+                // Custom style applied to the chat window
+                css: {
+                    width: '100%',
+                    height: '100%'
+                },
+
+                onlineSchedules: [{
+                    day: 'Monday-Friday',
+                    time: '0800-1800',
+                    city: 'America/Chicago'
+                }],
+
+                // Element that will have 'purecloud-chat-available' class added to it when
+                // intersection of online and not offline schedules
+                chatNowElement: 'chat-button',
+
+            };
+            var chatButton = document.getElementById('chat-button');
+
+            ININ.webchat.create(chatConfig)
+                .then(function (webchat) {
+                    chatButton.onclick = function () {
+                        webchat.renderFrame({
+                            containerEl: 'chat-container'
+                        });
+                    };
+                })
+                .catch(function (err){
+                    console.log(err);
+                });
+
+        });
+
+    </script>
+
+</body>
+</html>
