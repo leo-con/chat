@@ -23,7 +23,8 @@
                 targetAddress: 'LeonelContreras_Queue',
                 priority: 2
               }
-            }
+            },
+            main : {theme = 'light'}
           },
           userData: {
             addressStreet: '64472 Brown Street',
@@ -38,12 +39,14 @@
             // lastName: 'Gens',
             // email: 'praenomen.gens@calidumlitterae.com',
             // subject: 'Chat subject'
-          }
+          }          
         }
       }
     };
 
     const customPlugin = CXBus.registerPlugin('Custom');
+	
+	//window._genesys.widgets.main.theme = "light";
 
     customPlugin.subscribe('WebChatService.started', function (e) {
       console.log('Chat started', e);
