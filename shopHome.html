@@ -64,7 +64,6 @@
   </script>
 
 
-  <button type="button" id="chat-button-simple" onclick="customPlugin.command('WebChat.open');">Start Chat (simple)</button>
 
   <script type="text/javascript">
 		function getAdvancedConfig() {
@@ -122,6 +121,42 @@
 			};
 		}
 	</script>
+<style type="text/css">
+		#button {
+		 padding: 0;
+		 }
+		#button li {
+		 display: inline;
+		 }
+		 #button li a {
+		 font-family: Arial;
+		 font-size: 11px;
+		 text-decoration: none;
+		 float: left;
+		 padding: 10px;
+		 background-color: #2175bc;
+		 color: #fff;
+		 }
+
+		 #button li a:hover {
+			 background-color: #2586d7;
+			 margin-top: -2;
+			 padding-bottom: 12px;]
+			 }
+		</style>
+	<ul id="button">
+	 <li><a href="shopHome.html">Inicio</a></li>
+	 <li><a href="shopServicios.html">Servicios</a></li>
+	 <li><a href="#">Productos</a></li>
+	 <li><a href="#">Contacto</a></li>
+	</ul>
+
+	<br>
+	<br>
+	<br>
+	<br>
+  <button type="button" id="chat-button-simple" onclick="customPlugin.command('WebChat.open');">Start Chat (simple)</button>
+
 	<button type="button" id="chat-button" onclick="customPlugin.command('WebChat.open', getAdvancedConfig());">Start Chat (with data)</button>
 
 </body>
