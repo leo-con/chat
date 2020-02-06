@@ -55,7 +55,8 @@
     customPlugin.subscribe('WebChatService.ended', function (e) {
       console.log('Chat ended', e);
     });
-  window._genesys.widgets.main.theme = "light"; 
+  	//window._genesys.widgets.main.theme = "light"; 
+	window._genesys.widgets.bus.command("App.setTheme", {theme: "light"});	
   </script>
 
 
