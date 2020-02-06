@@ -28,7 +28,6 @@
               }
             }
           },
-          main : { theme : "light" },
           userData: {
             addressStreet: '64472 Brown Street',
             addressCity: 'Lindgrenmouth',
@@ -56,6 +55,7 @@
     customPlugin.subscribe('WebChatService.ended', function (e) {
       console.log('Chat ended', e);
     });
+  window._genesys.widgets.main.theme = "light"; 
   </script>
 
 
