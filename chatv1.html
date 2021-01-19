@@ -42,7 +42,7 @@
     <script type="text/javascript">
 
 $(document).ready(function initializeChat () {
-var chatConfig = {
+let chatConfig = {
   "webchatAppUrl": "https://apps.mypurecloud.com/webchat",
   "webchatServiceUrl": "https://realtime.mypurecloud.com:443",
   "orgId": "1041",
@@ -87,7 +87,7 @@ var chatConfig = {
     "width": "100%",
     "height": "100%"
   }
-}; } )
+}; 
 
 ININ.webchat.create(chatConfig, function(err, webchat) {
     if (err) {
@@ -101,7 +101,7 @@ ININ.webchat.create(chatConfig, function(err, webchat) {
         title: 'Chat'
     });
 });
-            
+       } )     
     </script>
 
 </body>
