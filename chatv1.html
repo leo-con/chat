@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>PureCloud Web Chat Demo</title>
+    <title>Genesys Cloud Web Chat Demo</title>
 </head>
 
 <body>
@@ -30,15 +30,15 @@
     </form>
     <div id="chat-container" style="height:600px"></div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script
-        id="purecloud-webchat-js"
-        type="text/javascript"
-        src="https://apps.mypurecloud.com/webchat/jsapi-v1.js"
-        region="us-east-1"
-          org-guid="eabbb69f-ba0f-44b5-bd00-c3b785fb8829"
-          deployment-key="98216a22-eb65-4122-b4da-fec7cf782f19"
-    ></script>
-
+<script
+  id="purecloud-webchat-js"
+  type="text/javascript"
+  src="https://apps.mypurecloud.com/webchat/jsapi-v1.js"
+  region="us-east-1"
+  org-guid="469e5298-2ec4-4340-bdea-08ad8c2495b5"
+  deployment-key="7fe9bd9e-3b6b-47f7-919a-2bac796ed23c"
+></script>
+    
     <script type="text/javascript">
 
         $(document).ready(function initializeChat () {
@@ -50,30 +50,30 @@
                 webchatServiceUrl: 'https://realtime.mypurecloud.com:443',
 
                 // organization GUID
-                orgGuid: 'eabbb69f-ba0f-44b5-bd00-c3b785fb8829',
+                orgGuid: '469e5298-2ec4-4340-bdea-08ad8c2495b5',
 
                 // Numeric organization ID
-                orgId: 43403,
+                orgId: '1041',
 
                 // Organization name. Replace with your org name.
-                orgName: 'disfrutaglobal106aus1',
+                orgName: 'ininadoptioninternal',
 
                 // Requested agent language skill (Agent must have this language skill to receive chat)
-                language: 'EnglishWritten',
+                language: 'English',
 
                 // Requested agent skills (Agent must have these skills to receive chat)
-                //skills: ['Leonel', 'Printers'],
+                //skills: ['Computers', 'Printers'],
                 // OR
                 skills: [],
 
                 // Priority
-                priority: 0,
+                //priority: 0,
 
                 // Queue Name
-                queueName : 'Customer Service',
+                queueName : 'Leonel',
 
                 // Target agent email (OPTIONAL)
-                agentEmail: 'leonel.contreras@genesys.com',
+                //agentEmail: 'alex.agent@example.com',
 
                 // Whether to show submit button or send message on Enter keypress
                 showSubmitButton: true,
@@ -85,7 +85,7 @@
                 locale: 'en',
 
                 // Whether to allow reconnects
-                reconnectEnabled: true,
+                //reconnectEnabled: true,
 
                 //Allowed reconnect origins
                 //reconnectOrigins: ['https://example.com', 'https://help.example.com', 'https://shop.example.com'],
@@ -96,7 +96,7 @@
                     height: 149,
                     url: 'https://dhqbrvplips7x.cloudfront.net/webchat/1.0.23/company-logo-small-9c9fe09b.png'
                 },
-                // Fallback image used for agent if no agent image is defined in the agent's PureCloud profile
+                // Fallback image used for agent if no agent image is defined in the agent's Genesys Cloud profile
                 agentAvatar: {
                     width: 462,
                     height: 462,
