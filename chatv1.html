@@ -86,7 +86,11 @@ let chatConfig = {
   "css": {
     "width": "100%",
     "height": "100%"
-  }
+  },
+    // Deployment key for your cobrowse deployment from Genesys Cloud admin UI
+        "cobrowseConfig": {
+                    "deploymentKey": "25O0CpQsBzSTD5T8UTUiE0oLkwcGzFi0",
+               }
 }; 
 
 ININ.webchat.create(chatConfig, function(err, webchat) {
