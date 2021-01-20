@@ -93,19 +93,13 @@ let chatConfig = {
                }
 }; 
 
-    //ININ.webchat.create(chatConfig, function(err, webchat) {
-    //    if (err) {
-    //        console.error(err);
-    //        throw err;
-    //    }
+    ININ.cobrowse.create(chatConfig, function(err, webchat) {
+        if (err) {
+            console.error(err);
+            throw err;
+        }
 
-                ININ.cobrowse.create(config)
-                    .then(function(result) {
-                        // Handle success
-                    })
-                    .catch(function(err) {
-                         console.error('Unable to share page', (err.stack || err));
-                    }    
+
     webchat.renderPopup({
         width: 400,
         height: 400,
