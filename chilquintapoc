@@ -1,0 +1,136 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Chat Configuration -->
+
+<input type="checkbox" id="check">
+<label class="chat-btn" for="check"> <i class="fa fa-commenting-o comment"></i> <i class="fa fa-close close"></i>
+</label>
+<div class="wrapper">
+    <div class="header">
+        <h6>Let's Chat - Online</h6>
+    </div>
+    <div class="text-center p-2"> <span>Please fill out the form to start chat!</span> </div>
+    <div class="chat-form">
+       <input type="text" id="firstName" class="form-control" placeholder="Nombre">
+       <input type="text" id="lastName" class="form-control" placeholder="Apellido">
+       <input type="text" id="customerEmail" class="form-control" placeholder="Email">
+       <button type="button" class="btn btn-success btn-block" id="start-chat" onclick="genesysWebchat.startEmbeddedChat()">Chat</button>
+      <div id="chatContainer" class="popup-box chat-popup" style="height:300px"></div>
+    </div>
+</div>
+
+
+    <!-- Replace mypurecloud.com with the hostname for your PureCloud region -->
+    <script
+    id="purecloud-webchat-js"
+    type="text/javascript"
+    src="https://apps.mypurecloud.com/webchat/jsapi-v1.js"
+    region="us-east-1"
+    org-guid="c8bb9493-2b8c-415a-b7b1-44cef16960f8"
+    deployment-key="3348af4a-faf5-4c62-8274-447233502500">
+    </script>
+
+    <script type="text/javascript">
+    let genesysWebchat = (function() {
+        function createChatConfig(){
+            let firstName = document.getElementById('firstName').value;
+            let lastName = document.getElementById('lastName').value;
+            let email = document.getElementById('customerEmail').value;
+            // let agentEmail = document.getElementById('agentEmail').value;
+
+            // For additional web chat config options, see web chat documentation. This example excludes some of the optional values.
+            return {
+                // Web chat application URL
+                "webchatAppUrl": "https://apps.mypurecloud.com/webchat",
+
+                // Web chat service URL
+                "webchatServiceUrl": "https://realtime.mypurecloud.com:443",
+
+                // Numeric organization ID
+                "orgId": 30907,
+
+                // Organization name
+                "orgName": "latamps",
+
+                // Target agent email (OPTIONAL)
+                //"agentEmail": agentEmail,
+
+                    // Queue Name
+                queueName : "LeonelContreras_Queue",
+
+                // Log level
+                "logLevel": "DEBUG",
+
+                // Locale code
+                "locale": "en",
+                // Logo used at the top of the chat window
+                "companyLogo": {
+                    "width": 600,
+                    "height": 149,
+                    "url": "https://dhqbrvplips7x.cloudfront.net/webchat/1.0.23/company-logo-large-cea5ee47.png"
+                },
+
+                // Logo used within the chat window
+                "companyLogoSmall": {
+                    "width": 149,
+                    "height": 149,
+                    "url": "https://dhqbrvplips7x.cloudfront.net/webchat/1.0.23/company-logo-small-9c9fe09b.png"
+                },
+
+                // Image used for agent
+                "agentAvatar": {
+                    "width": 462,
+                    "height": 462,
+                    "url": "https://dhqbrvplips7x.cloudfront.net/webchat/1.0.23/agent-e202505f.png"
+                },
+
+                // Text displayed when the chat window opens
+                "welcomeMessage": "Thanks for chatting.",
+
+                // CSS class applied to the chat window
+                "cssClass": "webchat-frame",
+
+                // Custom style applied to the chat window
+                "css": {
+                    "width": "100%",
+                    "height": "100%"
+                },
+
+                // Deployment key for your cobrowse deployment from PureCloud admin UI
+                "cobrowseConfig": {
+                   "deploymentKey": "g6VVHnWCx2jPe0Vl4pzwollWXiJqnHoI",
+                }
+            };
+        }
+        return {
+            startEmbeddedChat: function() {
+                let chatConfig = createChatConfig();
+                ININ.webchat.create(chatConfig, function(err, webchat) {
+                    if (err) {
+                        console.error('Unable to share page', (err.stack || err));
+                        return;
+                    }
+
+                    //Render to frame
+                    webchat.renderFrame({
+                        containerEl: 'chatContainer'
+                    });
+
+                });
+            }
+        }
+    })();
+    </script>
+
+</body>
+
+
+
+</html>
