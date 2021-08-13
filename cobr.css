@@ -1,10 +1,10 @@
-.webchat-frame .security-key-form .webchat-security-key-form {
+.webchat-frame .security-key-form .webchat-security-key-form .cobrowse-security-form{
  {
   margin: 5px;
   padding: 5px;
   border: 7px solid #4CAF50;
   background-color: lightblue;
-  height: 50%;
-  width: 50%;
+  height: 70%;
+  width: 70%;
 }
 
