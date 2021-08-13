@@ -1,8 +1,18 @@
+* { 
   margin: 5px;
   padding: 5px;
   border: 7px solid #4CAF50;
   background-color: lightblue;
   height: 70%;
   width: 70%;
+}
 
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: navy;
+  margin-left: 20px;
+}
 
