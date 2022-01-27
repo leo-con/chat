@@ -1,26 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>HTML Tutorial</title>
-<script type="text/javascript" charset="utf-8">
-  (function (g, e, n, es, ys) {
-    g['_genesysJs'] = e;
-    g[e] = g[e] || function () {
-      (g[e].q = g[e].q || []).push(arguments)
-    };
-    g[e].t = 1 * new Date();
-    g[e].c = es;
-    ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
-  })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
-    environment: 'use1',
-    deploymentId: 'af5f8e01-a262-4c16-aa04-cdb544818d95'
-  });
-</script>
-</head>
-<body>
+<title>Demo Web Messaging</title>
+<link rel="stylesheet" href="webmessaging1.css">
+<script type="text/javascript" charset="utf-8" src="webmessaging1.js"> </script>
 
-<h1>This is a heading</h1>
-<p>This is a paragraph.</p>
+</head>
+<body id="body">
+<div class="divFrm">
+    <div class="divField">
+
+      <label for="CBoxdeploymentId">Escoger deployment:</label>
+        <select name="CBoxdeploymentId" id="CBoxdeploymentId">
+          <option value="af5f8e01-a262-4c16-aa04-cdb544818d95">LatamPS    - LeonelC     - af5f8e01-a262-4c16-aa04-cdb544818d95</option>
+          <option value="68240440-dd57-4e69-af59-254f9a2c1370">Davivienda - Deployment_Messenger_Desarrollo - 68240440-dd57-4e69-af59-254f9a2c1370</option>
+          <option value="e8a6d5a0-78a5-4afb-bee7-135d1c2e0fe3">Davivienda - Demo Deploment - e8a6d5a0-78a5-4afb-bee7-135d1c2e0fe3</option>
+      </select>
+    </div>
+  <div class="divField">
+      <button id="btngenesysWidget"  onclick="genesysWidget();">Iniciar Widget escogido</button>
+  </div>
+
+</div>
+<br>
+<button class="oculto" id="toggle" onclick="ToggleWidget()">Mostrar Chat</button>
+<button  class="oculto" id="Recargar" onclick="location.reload();"  >  Recargar </button>
+<br>
+<button  class="oculto" id="CambiarDiv" onclick="CambiarDiv();"  >  CambiarDiv </button>
+
+<button class="oculto" id="custom-launcher" onclick="Eventos()">Subscribir a Ev</button>
+
+<!-- Trigger/Open The Modal -->
+<button class="oculto" id="myBtn">Open Modal</button>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Link enviado por el agente</p>
+    <embed  id="embed1" width="560" height="315" src="" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+</div>
+<br><br>
+
+<div class="divFrm">
+  <div class="divField">
+    Parametros para la interaccion:
+  </div>
+  <div class="divField">
+  <input type="text" id="email" size="50" value="juan.garcia@pruebas.uat"><br>
+  </div>
+  <div class="divField">
+  Acepta Terminos? <input type="checkbox" id="checkboxAcepta" ><br>
+  </div class="divField">
+  <div class="divField">
+    <button id="btnIniciarChat" class="oculto" onclick="BntInciarChat();">Iniciar Chat</button>
+  </div>
+</div>
 
 </body>
 </html>
