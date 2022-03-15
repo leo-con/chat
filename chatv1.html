@@ -8,7 +8,7 @@
 
 <body>
     <form id="chatForm">
-        <h3>Participant Information- local</h3>
+        <h3>Demo Org : auvious</h3>
 
         <table class="webchat-config">
             <tbody>
@@ -21,8 +21,8 @@
                     <td><input type="text" id="last-name" value="Doe" /></td>
                 </tr>
                 <tr>
-                    <th>Agent Email:</th>
-                    <td><input type="text" id="agent-email" value="alex.agent@example.com" /></td>
+                    <th>phone Number:</th>
+                    <td><input type="text" id="phoneNumber" value="+575555555555" /></td>
                 </tr>
             </tbody>
         </table>
@@ -42,6 +42,10 @@
     <script type="text/javascript">
 
 $(document).ready(function initializeChat () {
+let firstName = document.getElementById('first-name').value;
+let lastName = document.getElementById('last-name').value;
+let phoneNumber = document.getElementById('phoneNumber').value;
+
 let chatConfig = {
   "webchatAppUrl": "https://apps.mypurecloud.de/webchat",
   "webchatServiceUrl": "https://realtime.mypurecloud.de:443",
@@ -52,13 +56,13 @@ let chatConfig = {
   "logLevel": "DEBUG",
   "locale": "es",
   "data": {
-    "firstName": "Leonel",
-    "lastName": "",
-    "addressStreet": "Av Libertador",
-    "addressCity": "Caracas",
-    "addressPostalCode": "1050",
-    "addressState": "DC",
-    "phoneNumber": "+584127210157",
+    "firstName": firstName,
+    "lastName": lastName,
+    "addressStreet": "",
+    "addressCity": "",
+    "addressPostalCode": "",
+    "addressState": "",
+    "phoneNumber": phoneNumber,
     "customField1Label": "",
     "customField1": "",
     "customField2Label": "",
