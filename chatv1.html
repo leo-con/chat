@@ -33,24 +33,24 @@
 <script
   id="purecloud-webchat-js"
   type="text/javascript"
-  src="https://apps.mypurecloud.com/webchat/jsapi-v1.js"
-  region="us-east-1"
-  org-guid="469e5298-2ec4-4340-bdea-08ad8c2495b5"
-  deployment-key="7fe9bd9e-3b6b-47f7-919a-2bac796ed23c"
+  src="https://apps.mypurecloud.de/webchat/jsapi-v1.js"
+  region="eu-central-1"
+  org-guid="6e6d5224-1909-48fa-a982-66cef3fa4c08"
+  deployment-key="1f2199ef-632c-405e-8357-a8b09575b1dc"
 ></script>
     
     <script type="text/javascript">
 
 $(document).ready(function initializeChat () {
 let chatConfig = {
-  "webchatAppUrl": "https://apps.mypurecloud.com/webchat",
-  "webchatServiceUrl": "https://realtime.mypurecloud.com:443",
-  "orgId": "1041",
-  "orgGuid": "469e5298-2ec4-4340-bdea-08ad8c2495b5",
-  "orgName": "ininadoptioninternal",
-  "queueName": "Leonel",
+  "webchatAppUrl": "https://apps.mypurecloud.de/webchat",
+  "webchatServiceUrl": "https://realtime.mypurecloud.de:443",
+  "orgId": "854",
+  "orgGuid": "6e6d5224-1909-48fa-a982-66cef3fa4c08",
+  "orgName": "auvious",
+  "queueName": "davivienda",
   "logLevel": "DEBUG",
-  "locale": "en",
+  "locale": "es",
   "data": {
     "firstName": "Leonel",
     "lastName": "",
@@ -88,9 +88,9 @@ let chatConfig = {
     "height": "100%"
   },
     // Deployment key for your cobrowse deployment from Genesys Cloud admin UI
-        "cobrowseConfig": {
-                    "deploymentKey": "25O0CpQsBzSTD5T8UTUiE0oLkwcGzFi0",
-               }
+    //    "cobrowseConfig": {
+    //                "deploymentKey": "25O0CpQsBzSTD5T8UTUiE0oLkwcGzFi0",
+    //           }
 }; 
 
 ININ.webchat.create(chatConfig, function(err, webchat) {
